@@ -1,0 +1,567 @@
+<DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Felly ❤️</title>
+<style>
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:#ffc0cb; 
+    color:black;
+    text-align:center;
+}
+#lock{
+    position:fixed;
+    inset:0;
+    background:#ffc0cb;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+}
+input, button{
+    padding:10px;
+    margin:8px;
+    width:220px;
+    border-radius:8px;
+    border:none;
+    font-size:16px;
+}
+button{
+    background:#ff4f88;
+    color:white;
+    cursor:pointer;
+}
+button:hover{
+    opacity:0.9;
+}
+#top{
+    display:none;
+    margin-top:15px;
+}
+#top button{
+    width:auto;
+    margin:5px;
+}
+.panel{
+    display:none;
+    max-width:700px;
+    margin:20px auto;
+    background:rgba(255,255,255,0.5);
+    padding:20px;
+    border-radius:15px;
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  grid-auto-rows: 150px;
+  gap: 10px; /* space between photos */
+}
+
+.gallery img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* keeps image aspect ratio and crops overflow */
+  border-radius: 10px; /* optional, makes corners rounded */
+}
+
+}
+#popup{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,0.7);
+}
+#popup img{
+    max-width:90%;
+    max-height:90%;
+    margin-top:40px;
+}
+#music audio{
+    width:100%;
+    margin-top:10px;
+}
+/* Floating music icon */
+#musicIcon{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  width:50px;
+  height:50px;
+  background:#ff4f88;
+  border-radius:50%;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  color:white;
+  font-size:24px;
+  cursor:pointer;
+  box-shadow:0 4px 8px rgba(0,0,0,0.3);
+  z-index:1000;
+}
+/* Mini playlist popup */
+#miniPlaylist{
+  display:none;
+  position:fixed;
+  bottom:80px;
+  right:20px;
+  background:rgba(255,255,255,0.95);
+  border-radius:10px;
+  padding:10px;
+  box-shadow:0 4px 12px rgba(0,0,0,0.3);
+  max-height:300px;
+  overflow-y:auto;
+  z-index:1000;
+}
+#miniPlaylist ul{
+  list-style:none;
+  padding:0;
+  margin:0;
+}
+</style>
+</head>
+<body>
+
+<!-- LOCK -->
+<div id="lock">
+<h2>Hey kababy💖</h2>
+<p>Enter secret code & name</p>
+<input type="password" id="code" placeholder="Secret code">
+<input type="text" id="name" placeholder="Your name">
+<button onclick="unlock()">Open 💌</button>
+<p id="err" style="color:red"></p>
+</div>
+
+<!-- TOP BUTTONS -->
+<div id="top">
+<button onclick="openPanel('note')">💌 My Note</button>
+<button onclick="openPanel('photos')">📸 Photos</button>
+<button onclick="openPanel('music')">🎶 Playlist</button>
+</div>
+
+<!-- NOTE -->
+<div id="note" class="panel">
+<h3>My Note 💌</h3>
+<p style="text-align:left">
+💌 2nd March<br><br>
+my Princess❤️🫶<br><br>
+
+Happy 21st Birthday, Princess! 🎉🎂✨<br><br>
+
+Today isn’t just about cake 🎂, balloons 🎈, or wishes whispered under your breath.<br><br>
+Today is about you....the magical, beautiful, unstoppable, giggle-inducing, heart-stealing you who changed my world the moment you walked in. 💫<br><br>
+
+You didn’t just enter my life, baby…<br><br>
+You enchanted it. You made it brighter, warmer, softer… and somehow, even more exciting just by being yourself. 🌹<br><br>
+
+Sometimes I wonder… how did I get so lucky? 🍀<br><br>
+
+Lucky to love someone with a heart as pure as yours. 💖<br><br>
+Lucky to be chosen by you. 🫶<br><br>
+Lucky to laugh at your silly jokes 🤪, hold you when you’re tired 😴, and kiss your forehead when you look too cute for words 😘.<br><br>
+
+Because baby, loving you isn’t hard. Loving you isn’t confusing. Loving you doesn’t feel like effort at all.<br><br>
+It feels natural, effortless, and somehow like my heart already knew you were mine even before we met. 💞<br><br>
+
+Somewhere between our late-night talks 🌙, our random giggles 😂, and those quiet moments where we don’t even need words…<br><br>
+you became my favorite part of every day.<br><br>
+
+You’re my morning smile ☀️, my peace on stressful days 🌸, and the heartbeat I didn’t know I needed 💓.<br><br>
+With you, ordinary moments feel magical. ✨<br><br>
+You turn “just another day” into memories I’ll treasure forever. 🫶<br><br>
+
+What amazes me most is how gentle your love is.<br><br>
+
+You didn’t rush me.<br><br>
+You didn’t pressure me.<br><br>
+You didn’t demand anything.<br><br>
+
+You just… showed up. 💖<br><br>
+With kindness, patience, and that mischievous sparkle in your eyes 😏✨ that makes me weak in the knees every single time.<br><br>
+
+You showed me that love can be soft and strong at the same time.<br><br>
+That it can be playful 😝, deep 💖, silly 😂, and grounding 🌸 all at once.<br><br>
+That it can feel like home 🏡, even when the world is chaotic.<br><br>
+
+Twenty-one looks 🔥 on you, Princess.<br><br>
+
+It looks like growth, confidence, and discovering just how insanely amazing you are. 💫<br><br>
+It looks like beauty mixed with strength 💖, kindness mixed with determination 💪, and dreams mixed with unstoppable magic ✨.
+
+And KaBaby… I’m so, so proud of you. 🫶<br><br>
+Proud of everything you’ve become.<br><br>
+Proud of the love you give.<br><br>
+Proud of how you light up every room 💡.<br><br>
+Proud of how you just exist, effortlessly changing lives—including mine. 💖<br><br>
+
+On your special day, I wish you more than happiness…<br><br>
+I wish you adventures that make your heart race 🛶✨,<br><br>
+smiles that don’t leave your face 😁,<br><br>
+success that surprises you 🎯,<br><br>
+and love so full and warm 💖 that it makes your soul dance 💃.<br><br>
+
+I hope this year challenges you just enough to grow 🌱,<br><br>
+and rewards you in ways you didn’t even know were possible.<br><br>
+I hope you feel unstoppable 💫, powerful 💪, and more loved than ever ❤️.<br><br>
+
+And on days you feel tired, unsure, or a little lost…<br><br>
+I’ll be there, Princess 🌸, to remind you of your magic ✨, your heart 💖, and just how lucky I am to be with you. 🫶<br><br>
+
+Loving you,kababy … has changed me. 💞<br><br>
+
+You’ve taught me patience when I was rushed 😅<br><br>
+You’ve taught me understanding when I was confused 🤯<br><br>
+You’ve taught me how to love softer, deeper, and more honestly 💖 than I ever thought possible.<br><br>
+
+Being with you makes me want to be better…<br><br>
+Not just for you, KaBaby 🥰,<br><br>
+But for us, for our dreams , for the life we’re building together 🏡.<br><br>
+
+You feel like peace 🌸.<br><br>
+Like home 🏡.<br><br>
+Like warmth when I’m cold ❄️.<br><br>
+Like sunlight ☀️ on the grayest of days.<br><br>
+
+With you, I don’t have to hide.<br><br>
+I don’t have to pretend.<br><br>
+I just… get to be me 😌.<br><br>
+
+And princess… that is everything.<br><br>
+
+Sometimes I just look at you and think:<br><br>
+
+“How the hell did I get so lucky?” 😭❤️<br><br>
+
+Lucky to kiss that perfect smile 😘<br><br>
+Lucky to hold your hand 🫶<br><br>
+Lucky to call you mine 💞<br><br>
+
+You are caring, beautiful, smart, hilarious, loving… and somehow, all at once, my Enchantress, my Princess, my KaBaby 😏💖<br><br>
+
+Luck doesn’t even begin to describe it.<br><br>
+
+I don’t know what the future holds 🌌, but I know exactly what I want in it:<br><br>
+
+You. Always you. 💖<br><br>
+
+I want more memories 😍, more laughter 😂, more late-night talks 🌙, more silly fights that end in kisses 😘, more quiet mornings ☀️, more dreams we build together…<br><br>
+
+I want to keep learning you, loving you, choosing you…<br><br>
+every single day.<br><br>
+
+Even on messy days.<br><br>
+Even on chaotic days.<br><br>
+Even on the days life gets in the way.<br><br>
+
+I choose you.<br><br>
+Today.<br><br>
+Tomorrow.<br><br>
+Forever. 💞<br><br>
+
+Happy 21st Birthday Princess 🥳🎂🎉<br><br>
+
+May your year be as magical as your laugh 😏✨,<br><br>
+as bright as your smile 😁🌸,<br><br>
+and as unstoppable as your heart 💖💪<br><br>.
+
+May you always remember how much you are loved 💞…by me, today, tomorrow, and always. 🫶<br><br>
+
+Forever yours,<br><br>
+A.i 🤍<br><br>
+</p>
+</div>
+
+<!-- PHOTOS -->
+<div id="photos" class="panel">
+<h3>Our Memories 📸</h3>
+<div class="gallery">
+<img src="image1.jpeg" onclick="showPic(this.src)">
+<img src="image2.jpeg" onclick="showPic(this.src)">
+<img src="image3.jpeg" onclick="showPic(this.src)">
+<img src="image4.jpeg" onclick="showPic(this.src)">
+<img src="image5.jpeg" onclick="showPic(this.src)">
+<img src="image6.jpeg" onclick="showPic(this.src)">
+<img src="image7.jpeg" onclick="showPic(this.src)">
+<img src="image8.jpeg" onclick="showPic(this.src)">
+<img src="image9.jpeg" onclick="showPic(this.src)">
+<img src="image10.jpeg" onclick="showPic(this.src)">
+<img src="image11.jpeg" onclick="showPic(this.src)">
+<img src="image12.jpeg" onclick="showPic(this.src)">
+<img src="image13.jpeg" onclick="showPic(this.src)">
+<img src="image14.jpeg" onclick="showPic(this.src)">
+<img src="image15.jpeg" onclick="showPic(this.src)">
+<img src="image16.jpeg" onclick="showPic(this.src)">
+<img src="image17.jpeg" onclick="showPic(this.src)">
+<img src="image18.jpeg" onclick="showPic(this.src)">
+<img src="image19.jpeg" onclick="showPic(this.src)">
+<img src="image20.jpeg" onclick="showPic(this.src)">
+<img src="image21.jpeg" onclick="showPic(this.src)">
+<img src="image22.jpeg" onclick="showPic(this.src)">
+<img src="image23.jpeg" onclick="showPic(this.src)">
+<img src="image24.jpeg" onclick="showPic(this.src)">
+<img src="image25.jpeg" onclick="showPic(this.src)">
+<img src="image26.jpeg" onclick="showPic(this.src)">
+<img src="image27.jpeg" onclick="showPic(this.src)">
+<img src="image28.jpeg" onclick="showPic(this.src)">
+<img src="image29.jpeg" onclick="showPic(this.src)">
+<img src="image30.jpeg" onclick="showPic(this.src)">
+<img src="image31.jpeg" onclick="showPic(this.src)">
+<img src="image32.jpeg" onclick="showPic(this.src)">
+<img src="image33.jpeg" onclick="showPic(this.src)">
+<img src="image34.jpeg" onclick="showPic(this.src)">
+<img src="image35.jpeg" onclick="showPic(this.src)">
+<img src="image36.jpeg" onclick="showPic(this.src)">
+<img src="image37.jpeg" onclick="showPic(this.src)">
+<img src="image38.jpeg" onclick="showPic(this.src)">
+<img src="image39.jpeg" onclick="showPic(this.src)">
+<img src="image40.jpeg" onclick="showPic(this.src)">
+<img src="image41.jpeg" onclick="showPic(this.src)">
+<img src="image42.jpeg" onclick="showPic(this.src)">
+<img src="image43.jpeg" onclick="showPic(this.src)">
+<img src="image44.jpeg" onclick="showPic(this.src)">
+<img src="image45.jpeg" onclick="showPic(this.src)">
+<img src="image46.jpeg" onclick="showPic(this.src)">
+<img src="image47.jpeg" onclick="showPic(this.src)">
+<img src="image48.jpeg" onclick="showPic(this.src)">
+<img src="image49.jpeg" onclick="showPic(this.src)">
+<img src="image50.jpeg" onclick="showPic(this.src)">
+<img src="image51.jpeg" onclick="showPic(this.src)">
+<img src="image52.jpeg" onclick="showPic(this.src)">
+<img src="image53.jpeg" onclick="showPic(this.src)">
+<img src="image54.jpeg" onclick="showPic(this.src)">
+<img src="image55.jpeg" onclick="showPic(this.src)">
+<img src="image56.jpeg" onclick="showPic(this.src)">
+<img src="image57.jpeg" onclick="showPic(this.src)">
+<img src="image58.jpeg" onclick="showPic(this.src)">
+<img src="image59.jpeg" onclick="showPic(this.src)">
+<img src="image60.jpeg" onclick="showPic(this.src)">
+<img src="image61.jpeg" onclick="showPic(this.src)">
+<img src="image62.jpeg" onclick="showPic(this.src)">
+<img src="image63.jpeg" onclick="showPic(this.src)">
+</div>
+</div>
+
+<!-- VIDEOS PANEL -->
+<div id="videos" class="panel">
+<h3>Some of our little shorts🎬</h3>
+<div id="video" class="panel" >
+<video src="video1.mp4"onclick="showvideo(this.src)"></video>
+<video id="storyVideo" controls muted playsinline></video>
+<br><br>
+<button onclick="prevVideo()">⏮ Prev</button>
+<button onclick="nextVideo()">⏭ Next</button>
+</div>
+</div>
+
+<!-- MUSIC PANEL -->
+<div id="music" class="panel">
+<h3>Your Fav Playlist 🎶</h3>
+<p id="songTitle"></p>
+<audio id="player" controls></audio>
+<ul id="playlist" style="list-style:none; padding:0; max-width:400px; margin:20px auto;"></ul>
+<br>
+<button onclick="prev()">⏮ Prev</button>
+<button onclick="next()">⏭ Next</button>
+</div>
+
+<!-- FLOATING MUSIC ICON -->
+<div id="musicIcon">🎵</div>
+
+<!-- MINI PLAYLIST POPUP -->
+<div id="miniPlaylist">
+<ul id="miniPlaylistList"></ul>
+</div>
+
+<!-- IMAGE POPUP -->
+<div id="popup" onclick="closePic()">
+<img id="big">
+</div>
+
+<script>
+/* Unlock */
+function unlock(){
+  let code=document.getElementById("code").value;
+  let name=document.getElementById("name").value;
+  if(code==="2025" && name.toLowerCase()==="felly"){
+    document.getElementById("lock").style.display="none";
+    document.getElementById("top").style.display="block";
+    openPanel('note');
+  } else{
+    document.getElementById("err").innerText="Wrong code or name 💔";
+  }
+}
+
+/* Panels */
+function openPanel(id){
+  let all=document.getElementsByClassName("panel");
+  for(let i=0;i<all.length;i++){ all[i].style.display="none"; }
+  document.getElementById(id).style.display="block";
+}
+
+/* Photos */
+function showPic(src){
+  document.getElementById("popup").style.display="block";
+  document.getElementById("big").src=src;
+}
+function closePic(){ document.getElementById("popup").style.display="none"; }
+
+/* Music */
+let songs=[
+"yes_or_no_mp3_22596.mp3",
+"shot_glass_of_tears_mp3_22810.mp3",
+"we are buletproof.mp3",
+"Friends.mp3",
+"Blackswan.mp3",
+"I Love You I'm Sorry.mp3",
+"I Miss You I'm Sorry.mp3",
+"Residuals.mp3",
+"Hate me tomorrow.mp3",
+"Delusional Tumblr Girls.mp3",
+"Princess Treatment.mp3",
+"Constellation.mp3",
+"SMA.mp3",
+"Infinite Grace.mp3",
+"Pieces.mp3"
+];
+let names=[
+"Yes or No",
+"Serendipity",
+"Shot Glass of Tears",
+"We Are Bulletproof",
+"Friends",
+"Blackswan",
+"I Love You I'm Sorry",
+"I Miss You I'm Sorry",
+"Residuals",
+"Hate me tomorrow",
+"Delusional Tumblr Girls",
+"Princess Treatment",
+"Constellation",
+"SMA",
+"Infinite Grace",
+"Pieces"
+];
+let i=0;
+let player=document.getElementById("player");
+let title=document.getElementById("songTitle");
+let playlistEl=document.getElementById("playlist");
+let musicIcon=document.getElementById("musicIcon");
+let miniPlaylist=document.getElementById("miniPlaylist");
+let miniListEl=document.getElementById("miniPlaylistList");
+
+function loadSong(){
+  player.src=songs[i];
+  title.innerText="🎵 "+names[i];
+  highlightCurrentSong();
+  highlightMiniCurrentSong();
+}
+function next(){
+  i++;
+  if(i>=songs.length)i=0;
+  loadSong();
+  player.play();
+}
+function prev(){
+  i--;
+  if(i<0)i=songs.length-1;
+  loadSong();
+  player.play();
+}
+
+/* Build Main Playlist */
+function buildPlaylist(){
+  playlistEl.innerHTML="";
+  songs.forEach((song,index)=>{
+    let li=document.createElement("li");
+    li.innerText=names[index];
+    li.style.cursor="pointer";
+    li.style.padding="8px 12px";
+    li.style.borderRadius="8px";
+    li.style.marginBottom="4px";
+    li.addEventListener("click",()=>{
+      i=index;
+      loadSong();
+      player.play();
+    });
+    playlistEl.appendChild(li);
+  });
+}
+
+/* Highlight current song */
+function highlightCurrentSong(){
+  Array.from(playlistEl.children).forEach((li,idx)=>{
+    if(idx===i){
+      li.style.background="#ff4f88";
+      li.style.color="white";
+      li.style.fontWeight="bold";
+    } else{
+      li.style.background="transparent";
+      li.style.color="black";
+      li.style.fontWeight="normal";
+    }
+  });
+}
+
+/* Build Mini Playlist */
+function buildMiniPlaylist(){
+  miniListEl.innerHTML="";
+  songs.forEach((song,index)=>{
+    let li=document.createElement("li");
+    li.innerText=names[index];
+    li.style.cursor="pointer";
+    li.style.padding="5px 10px";
+    li.style.borderRadius="5px";
+    li.style.marginBottom="2px";
+    li.addEventListener("click",()=>{
+      i=index;
+      loadSong();
+      player.play();
+      miniPlaylist.style.display="none";
+    });
+    miniListEl.appendChild(li);
+  });
+}
+
+/* Highlight Mini Playlist */
+function highlightMiniCurrentSong(){
+  Array.from(miniListEl.children).forEach((li,idx)=>{
+    if(idx===i){
+      li.style.background="#ff4f88";
+      li.style.color="white";
+      li.style.fontWeight="bold";
+    } else{
+      li.style.background="transparent";
+      li.style.color="black";
+      li.style.fontWeight="normal";
+    }
+  });
+}
+
+/* Floating music icon behavior */
+musicIcon.addEventListener("click",()=>{
+  if(player.paused) player.play();
+  else player.pause();
+});
+player.addEventListener("play",()=>{
+  musicIcon.innerText="⏸";
+  musicIcon.title="Now playing: "+names[i];
+});
+player.addEventListener("pause",()=>{
+  musicIcon.innerText="🎵";
+  musicIcon.title="Paused: "+names[i];
+});
+musicIcon.addEventListener("dblclick",()=>{
+  miniPlaylist.style.display = miniPlaylist.style.display==="block"?"none":"block";
+});
+player.addEventListener("ended",()=>{
+  next();
+});
+
+/* Initialize */
+buildPlaylist();
+buildMiniPlaylist();
+loadSong();
+</script>
+</body>
+</html>
